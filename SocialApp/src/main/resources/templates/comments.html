@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>Add comment page</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+		integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+
+<body>
+	<div class="container my-2" align="center">
+		<div style="background-color:powderblue;">
+			<h1>PostGram</h1>
+			<h4>Comments</h4>
+
+		</div>
+
+		<a th:href="@{/addcomment}" class="btn btn-primary">Add Comment</a>
+		<br />
+		<table style="width:100%" border="1" class="table table-striped table-responsive-md">
+
+
+			<br />
+
+			<thead>
+				<tr>
+					<th>Id</th>
+					<th>Commnet Given</th>
+					<th>Time</th>
+					<th>Comment By</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="comment:${postComments}">
+
+					<td th:text="${comment.commentId}"></td>
+
+					<td th:text="${comment.commentGiven}"></td>
+
+					<td th:text="${comment.commentTimeStamp}"></td>
+
+					<td th:text="${comment.users.emailId}"></td>
+
+				</tr>
+
+			</tbody>
+		</table>
+		<a th:href="@{/viewallposts}" class="btn btn-primary btn-sm mb-3">Back Back To All Posts</a>
+	</div>
+</body>
+
+</html>

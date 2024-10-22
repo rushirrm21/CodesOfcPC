@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>Error Page</title>
+	<link th:href="@{/css/style.css}" rel="stylesheet">
+</head>
+
+<body>
+	<div class="container">
+
+		<h1 style="color: rgb(128, 0, 0); font-size: xx-large;"><b><u>Oops !</u></b></h1>
+		<h1 style="color: rgb(128, 0, 0); font-size: xx-large;"><b><u>Something went wrong.</u></b></h1>
+		<br /><br />
+
+		<p style="color: rgb(255, 128, 64);" th:text="${exception}"></p>
+		<br />
+		<p style="color: rgb(255, 128, 64);" th:text="${url}"></p>
+
+
+	</div>
+	</div>
+</body>
+
+</html>

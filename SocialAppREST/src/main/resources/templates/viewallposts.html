@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="ISO-8859-1">
+	<title>All posts page</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+		integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+
+<body>
+	<div class="container my-2" align="center">
+
+				<div style="background-color:powderblue;">
+			<h1 >PostGram</h1>
+			<h4 >All Posts</h4>
+
+</div>
+
+		<a th:href="@{/createpost}" class="btn btn-primary btn-sm mb-3">New Post</a>
+		
+		<a th:href="@{/myposts}" class="btn btn-primary btn-sm mb-3">My Posts</a>
+		
+		<table style="width:100%" border="1" class="table table-striped table-responsive-md">
+
+
+
+
+			<thead>
+				<tr>
+					<th>Id</th>
+					<th>Title</th>
+					<th>Description</th>
+					<th>Time</th>
+					<th>Posted By</th>
+					<th>Action</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="post:${posts}">
+
+					<td th:text="${post.postId}"></td>
+
+					<td th:text="${post.postTitle}"></td>
+
+					<td th:text="${post.postDescription}"></td>
+
+					<td th:text="${post.postTimestamp}"></td>
+
+					<td th:text="${post.users.emailId}"></td>
+
+					<td> <a th:href="@{/comments/{postId}(postId=${post.postId})}" class="btn btn-primary">View Comments</a>
+					</td>
+
+				</tr>
+
+			</tbody>
+		</table>
+		<a th:href="@{/logout}" class="btn btn-primary btn-sm mb-3">Logout</a>
+	</div>
+</body>
+
+</html>

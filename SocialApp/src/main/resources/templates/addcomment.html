@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>Login Page</title>
+	<link th:href="@{/css/style.css}" rel="stylesheet">
+</head>
+
+<body>
+	<div class="container">
+		<div class="wrapper">
+			<div class="title"><span>Please type your comment</span></div>
+			<form th:action="@{/addcomment}" th:object="${comments}" method="post">
+				<form>
+					<div class="row">
+						<label for="comment">Comment</label>
+						<input type="text" name="commentGiven">
+					</div>
+
+					<div class="row button">
+						<input type="submit" value="Upload Comment">
+					</div>
+				</form>
+		</div>
+	</div>
+</body>
+
+</html>
+
+<!--/{postId}(postId=${post.postId})-->

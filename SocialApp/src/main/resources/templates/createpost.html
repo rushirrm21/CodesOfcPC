@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>Create Post Page</title>
+	<link th:href="@{/css/style.css}" rel="stylesheet">
+</head>
+
+<body>
+	<div class="container">
+		<div class="wrapper">
+			<div class="title"><span>Create new post</span></div>
+			<form th:action="@{/createpost}" th:object="${posts}" method="post">
+				<div class="row">
+					<label for="postTitle">Post Title</label>
+					<input type="text" name="postTitle" required>
+				</div>
+
+				<div class="row">
+					<label for="postDescription">Post Description</label>
+					<input type="text" name="postDescription" required>
+				</div>
+
+				<div class="row button">
+					<input type="submit" value="Upload">
+				</div>
+			</form>
+		</div>
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+<table style="width:80%" border="1" class = "table table-striped table-responsive-md">
+
+<thead>
+
+<tr>
+
+<th>Identity</th>
+<th>FirstName</th>
+<th>LastName</th>
+<th>Email Id</th>
+<th>Department</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+<tr th:each="emp:${employeeList}">
+
+<td th:text="${emp.id}"></td>
+
+<td th:text="${emp.fName}"></td>
+
+<td th:text="${emp.lName}"></td>
+
+<td th:text="${emp.email}"></td>
+
+<td th:text="${emp.department}"></td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+
+<div><br/><br/><br/><br/>
+<a href="addemployee">Add Employee Details</a><br/><br/>
+
+<a href="updateemployee">Update Employee Details</a><br/><br/>
+
+<a href="deleteemployee">Delete Employee Details</a>
+</div>
+
+</body>
+
+</html>
